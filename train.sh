@@ -1,0 +1,1 @@
+python train.py --data d4la --model m-doclayout --epoch 500 --image-size 1600 --batch-size 64 --project public_dataset/D4LA --plot 1 --optimizer SGD --lr0 0.04 --pretrain doclayout_yolo_docsynth300k_imgsz1600.pt --device=0

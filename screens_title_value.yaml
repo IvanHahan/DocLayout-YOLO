@@ -1,0 +1,6 @@
+train: /home/azureuser/cloudfiles/code/datasets/odel_title_value_yolo/train.txt
+test: /home/azureuser/cloudfiles/code/datasets/odel_title_value_yolo/train.txt
+val: /home/azureuser/cloudfiles/code/datasets/odel_title_value_yolo/train.txt
+names:
+ - title
+ - value

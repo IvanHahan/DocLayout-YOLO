@@ -1,0 +1,31 @@
+train: /home/azureuser/cloudfiles/code/datasets/D4LA/test.txt
+test: /home/azureuser/cloudfiles/code/datasets/D4LA/test.txt
+val: /home/azureuser/cloudfiles/code/datasets/D4LA/test.txt
+names:
+ - DocTitle
+ - ListText
+ - Table
+ - Figure
+ - TableName
+ - FigureName
+ - Footer
+ - PageHeader
+ - PageFooter
+ - Author
+ - Abstract
+ - ParaText
+ - ParaTitle
+ - Equation
+ - Reference
+ - PageNumber
+ - OtherText
+ - LetterHead
+ - LetterDear
+ - LetterSign
+ - Date
+ - RegionKV
+ - RegionList
+ - RegionTitle
+ - Number
+ - Catalog
+ - Question
