@@ -17,40 +17,39 @@ Example:
     ```
 """
 
-from .g2l_crm import G2L_CRM
 from .block import (
     C1,
     C2,
     C3,
     C3TR,
     DFL,
+    PSA,
     SPP,
+    SPPELAN,
     SPPF,
+    ADown,
+    BNContrastiveHead,
     Bottleneck,
     BottleneckCSP,
     C2f,
     C2fAttn,
-    ImagePoolingAttn,
+    C2fCIB,
     C3Ghost,
     C3x,
+    CBFuse,
+    CBLinear,
+    ContrastiveHead,
     GhostBottleneck,
     HGBlock,
     HGStem,
+    ImagePoolingAttn,
     Proto,
     RepC3,
-    ResNetLayer,
-    ContrastiveHead,
-    BNContrastiveHead,
     RepNCSPELAN4,
-    ADown,
-    SPPELAN,
-    CBFuse,
-    CBLinear,
-    Silence,
-    PSA,
-    C2fCIB,
-    SCDown,
     RepVGGDW,
+    ResNetLayer,
+    SCDown,
+    Silence,
 )
 from .conv import (
     CBAM,
@@ -67,7 +66,18 @@ from .conv import (
     RepConv,
     SpatialAttention,
 )
-from .head import OBB, Classify, Detect, Pose, RTDETRDecoder, Segment, WorldDetect, v10Detect
+from .g2l_crm import G2L_CRM
+from .head import (
+    OBB,
+    Classify,
+    Detect,
+    Pose,
+    RTDETRDecoder,
+    Segment,
+    WorldDetect,
+    v10Detect,
+    v10DetectWithEL,
+)
 from .transformer import (
     AIFI,
     MLP,
@@ -145,4 +155,6 @@ __all__ = (
     "SCDown",
     "RepVGGDW",
     "v10Detect",
+    "v10DetectWithEL",
+    "G2L_CRM",
 )

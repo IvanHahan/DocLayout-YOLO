@@ -1,6 +1,6 @@
 import argparse
 
-from doclayout_yolo import YOLOv10
+from doclayout_yolo import YOLOv10WithEL
 
 if __name__ == "__main__":
 
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         pretrain_name = "None"
 
     # Load a pre-trained model
-    model = YOLOv10(model)
+    model = YOLOv10WithEL(model)
 
     # whether to val during training
     if args.val:
