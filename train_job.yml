@@ -1,0 +1,31 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: .
+environment_variables:
+  PYTHONPATH: "."
+  HF_TOKEN: "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"
+  HF_HOME: "azureml://subscriptions/0feed943-d77c-41d7-b087-eba62f229479/resourcegroups/AIandML/workspaces/AIandML/datastores/datasets/paths/cache"
+command: >-
+  pip install -U albumentations &&
+  python update_data_yaml.py --yaml interactable.yaml --train ${{inputs.data}} --test ${{inputs.data}} &&
+  python train.py --data interactable --model m-doclayout --epoch 100 --image-size 1600  --batch-size 8 --project outputs --plot 1 --optimizer SGD --lr0 0.04 --pretrain interactable_detector.pt --device=0
+environment: azureml:transformers-training@latest
+compute: A100
+# distribution:
+#   type: pytorch
+#   process_count_per_instance: 1
+resources:
+  docker_args: '--ipc=host'
+  instance_count: 1
+experiment_name: icon_detection
+# display_name: florence
+inputs:
+  data: 
+    type: uri_folder
+    path: azureml://subscriptions/0feed943-d77c-41d7-b087-eba62f229479/resourcegroups/AIandML/workspaces/AIandML/datastores/datasets/paths/interactable_2
+services:
+  my_vs_code:
+    type: vs_code
+    nodes: all # For distributed jobs, use the `nodes` property to pick which node you want to enable interactive services on. If `nodes` are not selected, by default, interactive applications are only enabled on the head node. Values are "all", or compute node index (for ex. "0", "1" etc.)
+  my_jupyter_lab:
+    type: jupyter_lab
+    nodes: all

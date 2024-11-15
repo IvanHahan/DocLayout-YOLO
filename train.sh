@@ -1,0 +1,1 @@
+python train.py --data interactable --model m-doclayout --epoch 500 --image-size 512 --batch-size 1 --project interactable --plot 1 --optimizer SGD --lr0 0.04 --pretrain interactable_detector.pt --device=0
